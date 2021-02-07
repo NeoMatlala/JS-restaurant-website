@@ -4,10 +4,9 @@ Responsive *Makeshift Health Restaurant Website* created using HTML5, JavaScript
 
 
 ## What I have learned
-- Mobile first approach
+- Dark/Light mode toggling with JavaScript and CSS3
 - Responsive Web Design
-- Responsive menu using Vanilla JavaScript
-- *Scroll to the top button* functionality with JavaScript
+- Local Storage for saving user's previously selected theme
 
 
 ## See it live

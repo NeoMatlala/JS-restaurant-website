@@ -1,4 +1,4 @@
-/* ----- SHOW MENU ------ */
+/* --------------------- SHOW MENU --------------------- */
 const showMenu = (toggleId, navId) => {
     const toggle = document.getElementById(toggleId);
     const nav = document.getElementById(navId);
@@ -27,6 +27,7 @@ function linkAction(){
 navLink.forEach(n => n.addEventListener('click', linkAction))
 
 
+
 /* --------------- SCROLL SECTION ACTIVE LINK ------------ */
 const sections = document.querySelectorAll('section[id]')
 
@@ -50,7 +51,8 @@ function scrollActive(){
 window.addEventListener('scroll', scrollActive)
 
 
-/* ----- CHANGE HEADER/NAV COLOR ON SCROLL ------ */
+
+/* --------------- CHANGE HEADER/NAV COLOR ON SCROLL ------ */
 function scrollHeader(){
     const nav = document.getElementById('header')
 
@@ -61,7 +63,8 @@ function scrollHeader(){
 window.addEventListener('scroll', scrollHeader)
 
 
-/* ----- SHOW SCROLL TOP FUNCTIONALITY ------ */
+
+/* -------------- SHOW SCROLL TOP FUNCTIONALITY ---------- */
 function scrollTop(){
     const scrollTop = document.getElementById('scroll-top')
 
@@ -72,4 +75,40 @@ function scrollTop(){
 window.addEventListener('scroll', scrollTop)
 
 
-/* ----- DARK/LIGHT THEME ------ */
+
+/* ------------------- DARK/LIGHT THEME --------------- */
+const themeButton = document.getElementById('theme-button')
+const darkTheme = 'dark-theme'
+const iconTheme = 'bx-sun'
+
+// save user's theme via local storage
+const selectedTheme = localStorage.getItem('selected-theme')
+const selectedIcon = localStorage.getItem('selected-icon')
+
+// We get the current theme the interface has, by validating the dark theme class 
+const getCurrentTheme = () => document.body.classList.contains(darkTheme) ? 'dark' : 'light'
+const getCurrentIcon = () => themeButton.classList.contains(iconTheme) ? 'bx-moon' : 'bx-sun'
+
+
+// We check if user previously seleted a theme or not
+if(selectedTheme){
+    // ask what the issue was to know if we activated or deactivated the dark theme
+    document.body.classList[selectedTheme === 'dark' ? 'add' : 'remove'](darkTheme)
+    themeButton.classList[selectedIcon === 'bx-moon' ? 'add' : 'remove'](iconTheme)
+}
+
+
+// activate/ deactivate the theme manually with the button
+themeButton.addEventListener('click', () => {
+    // Add or remove the dark / icon theme
+    document.body.classList.toggle(darkTheme)
+    themeButton.classList.toggle(iconTheme)
+
+    // Save the current theme and icon 
+    localStorage.setItem('selected-theme', getCurrentTheme())
+    localStorage.setItem('selected-icon', getCurrentIcon())
+})
+
+
+
+/* --------------- SCROLL REVEAL ANIMATION ---------------- */
