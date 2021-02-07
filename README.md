@@ -7,6 +7,7 @@ Responsive *Makeshift Health Restaurant Website* created using HTML5, JavaScript
 - Dark/Light mode toggling with JavaScript and CSS3
 - Responsive Web Design
 - Local Storage for saving user's previously selected theme
+- JavaScript's library that animates elements as they scroll, *scrollReveal*
 
 
 ## See it live
